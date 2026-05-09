@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+
 # ♻️ TraceChain — Traceable Waste Flow Network
 
 > **GreenHack by Grevoro · Problem Statement 2**
@@ -29,20 +31,22 @@ Database Schema:
 ```
 
 ### Tech Stack
-| Layer | Technology |
-|-------|-----------|
-| Frontend | React 18, React Router v6, Recharts, QRCode.react |
-| Backend | Node.js, Express, JWT Auth |
-| Database | SQLite (production: PostgreSQL) |
-| Auth | JWT Role-Based (collector / aggregator / industry / admin) |
-| Tracking | QR Batch IDs (`WN-{timestamp}-{rand4}`) |
-| Charts | Recharts (bar + pie) |
+
+| Layer    | Technology                                                 |
+| -------- | ---------------------------------------------------------- |
+| Frontend | React 18, React Router v6, Recharts, QRCode.react          |
+| Backend  | Node.js, Express, JWT Auth                                 |
+| Database | SQLite (production: PostgreSQL)                            |
+| Auth     | JWT Role-Based (collector / aggregator / industry / admin) |
+| Tracking | QR Batch IDs (`WN-{timestamp}-{rand4}`)                    |
+| Charts   | Recharts (bar + pie)                                       |
 
 ---
 
 ## 👥 Roles & Features
 
 ### 🧺 Collector (Ragpicker)
+
 - Phone OTP-style login
 - Log waste batch: material type + weight → auto-generates QR Batch ID
 - View batch history with status (collected → in-transit → delivered)
@@ -50,6 +54,7 @@ Database Schema:
 - Mobile-first UI with large buttons
 
 ### 🏪 Kabadiwala (Aggregator)
+
 - Scan / enter Batch QR Code to receive batches
 - Consolidate multiple batches into a **Lot**
 - View real-time inventory by material type
@@ -57,12 +62,14 @@ Database Schema:
 - Full audit trail per batch
 
 ### 🏭 Recycler (Industry)
+
 - Post demand: material needed, quantity (kg), price offered (₹/kg)
 - View available lots matching their demand
 - Accept a lot → triggers chain confirmation
 - View all accepted lots history
 
 ### 🛡️ Admin
+
 - Full network map: all batches, all actors
 - Material volume analytics (bar + pie charts)
 - Complete append-only audit log
@@ -73,12 +80,14 @@ Database Schema:
 ## 🔑 Core Logic
 
 ### Batch ID Format
+
 ```
 WN-{7-digit-timestamp}-{4-char-random}
 Example: WN-1700000-A1B2
 ```
 
 ### Audit Log (Append-Only)
+
 ```json
 {
   "batchId": "uuid",
@@ -90,9 +99,11 @@ Example: WN-1700000-A1B2
   "timestamp": "2024-01-01T10:00:00Z"
 }
 ```
+
 Actions: `BATCH_CREATED → BATCH_DISPATCHED → BATCH_RECEIVED → LOT_CREATED → LOT_ACCEPTED`
 
 ### AI Demand-Supply Matcher
+
 When a kabadiwala's inventory of material X meets an industry's posted minimum threshold → **auto-creates a match** and alerts both parties.
 
 ---
@@ -100,6 +111,7 @@ When a kabadiwala's inventory of material X meets an industry's posted minimum t
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18+
 - npm
 
@@ -120,6 +132,7 @@ cd ../frontend && npm install
 ### Running the App
 
 **Terminal 1 — Backend:**
+
 ```bash
 cd backend
 node server.js
@@ -127,6 +140,7 @@ node server.js
 ```
 
 **Terminal 2 — Frontend:**
+
 ```bash
 cd frontend
 npm start
@@ -137,13 +151,13 @@ npm start
 
 ## 🔐 Demo Accounts
 
-| Role | Phone | Password |
-|------|-------|----------|
-| Collector (Ramu) | 9000000001 | pass123 |
-| Collector (Sita) | 9000000002 | pass123 |
-| Aggregator (Suresh) | 9000000004 | pass123 |
-| Industry (GreenRecycle) | 9000000006 | pass123 |
-| Admin | 9000000000 | admin123 |
+| Role                    | Phone      | Password |
+| ----------------------- | ---------- | -------- |
+| Collector (Ramu)        | 9000000001 | pass123  |
+| Collector (Sita)        | 9000000002 | pass123  |
+| Aggregator (Suresh)     | 9000000004 | pass123  |
+| Industry (GreenRecycle) | 9000000006 | pass123  |
+| Admin                   | 9000000000 | admin123 |
 
 > Click any demo account chip on the login page to auto-fill credentials.
 
@@ -201,11 +215,11 @@ tracechain/
 
 ## 🎯 Evaluation Alignment
 
-| Criterion | How TraceChain Addresses It |
-|-----------|----------------------------|
-| **Problem Understanding** | Models all 5 chain actors; solves tracking, opacity, informal worker inclusion, supply-demand gap |
-| **System Design & Core Logic** | QR batch IDs + append-only audit log + AI matcher + role-based architecture |
-| **Innovation with Practicality** | SMS fallback concept + printed QR = zero disruption to ragpicker workflows |
+| Criterion                        | How TraceChain Addresses It                                                                       |
+| -------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Problem Understanding**        | Models all 5 chain actors; solves tracking, opacity, informal worker inclusion, supply-demand gap |
+| **System Design & Core Logic**   | QR batch IDs + append-only audit log + AI matcher + role-based architecture                       |
+| **Innovation with Practicality** | SMS fallback concept + printed QR = zero disruption to ragpicker workflows                        |
 
 ---
 
@@ -215,4 +229,4 @@ tracechain/
 
 ---
 
-*Built with ♻️ for a cleaner India*
+_Built with ♻️ for a cleaner India_
