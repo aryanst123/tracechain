@@ -1,4 +1,4 @@
-<img width="1919" height="206" alt="Screenshot 2026-05-09 085916" src="https://github.com/user-attachments/assets/d0d97773-daa9-416a-857b-d3501af1f066" />
+<img width="300" height="300" alt="Screenshot 2026-05-09 085916" src="https://github.com/user-attachments/assets/d0d97773-daa9-416a-857b-d3501af1f066" />
 
 
 # ♻️ TraceChain — Traceable Waste Flow Network
