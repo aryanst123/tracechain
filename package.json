@@ -1,0 +1,14 @@
+{
+  "name": "tracechain",
+  "version": "1.0.0",
+  "description": "TraceChain - Traceable Waste Flow Network | GreenHack by Grevoro",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "start:backend": "cd backend && node server.js",
+    "start:frontend": "cd frontend && npm start",
+    "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
